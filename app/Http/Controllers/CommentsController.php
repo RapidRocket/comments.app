@@ -21,6 +21,7 @@ class CommentsController extends Controller
 
         $request['user_id'] = '1';
         $request['published_at'] = Carbon::now();
+
         Comment::create($request->all());
 
         return redirect ('posts/'.$request['post_id']);

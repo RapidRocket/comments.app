@@ -24,6 +24,7 @@ class PostsController extends Controller
         $post = Post::findorFail($id);
 
         $comments = Comment::where('post_id', '=', $id)->get();
+
         return view('posts.show', compact('post','comments'));
     }
 
@@ -34,13 +35,10 @@ class PostsController extends Controller
 
     public function store(CreatePostRequest $request){
 
-        /*$form_data = Request::all();
-        $form_data['user_id'] = '1';
-        $form_data['excerts'] = $form_data['body'];
-        $form_data['published_at'] = Carbon::now();*/
         $request['user_id'] = '1';
         $request['excerts'] = $request['body'];
         $request['published_at'] = Carbon::now();
+
         Post::create($request->all());
 
         return redirect('posts');
