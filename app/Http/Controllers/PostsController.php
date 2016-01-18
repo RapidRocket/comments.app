@@ -41,7 +41,7 @@ class PostsController extends Controller
         $request['user_id'] = '1';
         $request['excerts'] = $request['body'];
         $request['published_at'] = Carbon::now();
-        Post::create($request);
+        Post::create($request->all());
 
         return redirect('posts');
     }
