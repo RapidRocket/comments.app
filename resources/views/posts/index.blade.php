@@ -8,7 +8,7 @@
 
             <article>
                 <a href="{{ action('PostsController@show',[$post->id]) }}">
-                    <h1>{{ $post->name }}</h1>
+                    <h1>{{ $post->title }}</h1>
                     <p>{{ $post->body }}</p>
                 </a>
             </article>

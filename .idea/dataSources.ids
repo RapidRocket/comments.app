@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Sqlite (Xerial) - database.sqlite" uuid="7bd99fc9-01e5-410f-a8f4-76a9b02861f4">
+  <data-source name="Sqlite (Xerial) - database.sqlite" uuid="1aab14a0-2934-4983-9ab4-4f1357dbbe49">
     <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
-    <table name="articles" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+    <table name="comments" schema="" catalog="" type="TABLE">
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="post_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="parent_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="vote_up" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="vote_dwn" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="published_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="excerpt" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
+      <column name="deleted_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="comments_rated" schema="" catalog="" type="TABLE">
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="post_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="comment_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="vote" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
     </table>
     <table name="migrations" schema="" catalog="" type="TABLE">
       <column name="migration" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
@@ -25,43 +34,26 @@
       <index name="password_resets_token_index" unique="true" columns="token"/>
       <index name="password_resets_email_index" unique="true" columns="email"/>
     </table>
+    <table name="posts" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="excerts" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="published_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="deleted" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+    </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
     </table>
-    <table name="user_comments" schema="" catalog="" type="TABLE">
-      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="post_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="parent_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="vote_up" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="vote_dwn" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="deleted_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="deleted" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-    </table>
-    <table name="user_comments_rated" schema="" catalog="" type="TABLE">
-      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="post_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="comment_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="vote_up" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="vote_dwn" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-    </table>
-    <table name="user_posts" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="excerts" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="deleted" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
     <table name="users" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="username" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="fname" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="lname" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="remember_token" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>

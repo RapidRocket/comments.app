@@ -4,13 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserPosts extends Model
+class Comments extends Model
 {
     protected $fillable = [
-
         'user_id',
-        'name',
+        'post_id',
+        'parent_id',
         'body',
+        'vote_up',
+        'vote_dwn',
+        'deleted_at',
         'deleted'
 
     ];

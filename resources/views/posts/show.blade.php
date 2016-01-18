@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('content')
-    <h1>{{ $post->name  }}</h1>
+    <h1>{{ $post->title }}</h1>
+    <hr>
     <p>{{ $post->body  }}</p>
 
 @stop
@@ -20,26 +21,38 @@
                 </div>
             @endforeach
             <hr>
-            <div class="new-comment">
-                <form role="form">
-                    <div class="form-group">
-                        <label for="email">Type your text:</label>
-                        <input type="text" class="form-control" id="comment">
-                    </div>
-                    <button type="submit" class="btn btn-default">Send Comment</button>
-                </form>
+            <!-- Add Comment Form Create -->
+            {!! Form::open(array('url' => 'posts/')) !!}
+
+            <!-- Text Form Input -->
+            <div class="form-group">
+                {!! Form::label('text', 'Text:') !!}
+                {!! Form::text('text',null, ['class' => 'form-control']) !!}
             </div>
+
+            <!-- Add Comment Form Input -->
+            <div class="form-group">
+                {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form control']) !!}
+            </div>
+
+            {!! Form::close() !!}
         @else
             <hr>
-            <div class="new-comment">
-                <form role="form">
-                    <div class="form-group">
-                        <label for="email">Type your text:</label>
-                        <input type="text" class="form-control" id="comment">
-                    </div>
-                    <button type="submit" class="btn btn-default">Send Comment</button>
-                </form>
+            <!-- Add Comment Form Create -->
+            {!! Form::open(array('url' => 'posts/')) !!}
+
+                    <!-- Text Form Input -->
+            <div class="form-group">
+                {!! Form::label('text', 'Text:') !!}
+                {!! Form::text('text',null, ['class' => 'form-control']) !!}
             </div>
+
+            <!-- Add Comment Form Input -->
+            <div class="form-group">
+                {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form control']) !!}
+            </div>
+
+            {!! Form::close() !!}
         @endif
     </div>
 
