@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('excerts');
-            $table->text('body');
+            $table->string('body');
             $table->timestamps();
             $table->timestamp('published_at');
             $table->boolean('deleted')->nullable();

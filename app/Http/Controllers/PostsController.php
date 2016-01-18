@@ -22,8 +22,8 @@ class PostsController extends Controller
     public function show($id){
 
         $post = Post::findorFail($id);
-        $comments = Comment::all()->where('post_id', $id);
 
+        $comments = Comment::where('post_id', '=', $id)->get();
         return view('posts.show', compact('post','comments'));
     }
 

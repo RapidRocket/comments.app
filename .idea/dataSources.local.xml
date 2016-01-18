@@ -5,5 +5,11 @@
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
+    <data-source name="PostgreSQL - homestead@localhost" uuid="afcbe494-d8ec-46f0-b624-b51607395641">
+      <secret-storage>master_key</secret-storage>
+      <user-name>homestead</user-name>
+      <schema-pattern>homestead.pg_catalog homestead.public</schema-pattern>
+      <default-schemas>homestead.public</default-schemas>
+    </data-source>
   </component>
 </project>
