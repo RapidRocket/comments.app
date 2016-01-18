@@ -18,8 +18,8 @@ class CreateCommentsTable extends Migration
             $table->integer('post_id');
             $table->integer('parent_id')->nullable();
             $table->text('body');
-            $table->integer('vote_up');
-            $table->integer('vote_dwn');
+            $table->integer('vote_up')->default(0);
+            $table->integer('vote_dwn')->default(0);
             $table->timestamps();
             $table->timestamp('published_at');
             $table->timestamp('deleted_at')->nullable();

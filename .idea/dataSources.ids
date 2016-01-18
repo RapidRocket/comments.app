@@ -9,8 +9,8 @@
       <column name="post_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="parent_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="vote_up" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="vote_dwn" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="vote_up" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <column name="vote_dwn" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="published_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
