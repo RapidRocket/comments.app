@@ -14,6 +14,14 @@ use App\Http\Requests;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth', ['except' => 'index'] );
+        
+    }
+
     public function index(){
 
         $posts= Post::latest('published_at')->get();
@@ -39,8 +47,9 @@ class PostsController extends Controller
 
         $request['excerts'] = $request['body'];
         $request['published_at'] = Carbon::now();
-        $post = new Post($request->all());
-        Auth::user()->posts()->save($post);
+        Auth::user()->posts()->create($request->all());
+
+        flash()->overlay('You have just created a post','Good Luck');
 
         return redirect('posts');
     }

@@ -30,6 +30,10 @@ class CreateCommentsTable extends Migration
                 ->references('id')
                 ->on('users');
 
+            $table->foreign('post_id')
+                ->references('id')
+                ->on('posts');
+
         });
     }
 

@@ -24,6 +24,7 @@ class CommentsController extends Controller
         $comment = new Comment($request->all());
         Auth::user()->comments()->save($comment);
 
+
         return redirect ('posts/'.$request['post_id']);
     }
 }

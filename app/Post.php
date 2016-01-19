@@ -8,17 +8,20 @@ class Post extends Model
 {
     protected $fillable = [
 
-        'user_id',
         'title',
         'excerts',
         'body',
         'published_at',
-        'deleted'
 
     ];
 
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
 }

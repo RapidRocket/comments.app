@@ -6,13 +6,6 @@
 
         @include('comments.partials.comment')
 
-        {{--<a href="#">{{ $comment->user_id }}</a>
-        <a class="vote_up" href="#">Vote up</a>
-        <a class="vote_dwn" href="#">Vote down</a>
-        <span class="votes">{{ $comment->vote_up-$comment->vote_dwn }}</span>
-        <span class="comment_text">{{ $comment->body }}</span>
-        <span class="created_at">{{ $comment->created_at->diffForHumans() }}</span>
-        <a href="#">Reply</a>--}}
     @endforeach
     <hr>
 
