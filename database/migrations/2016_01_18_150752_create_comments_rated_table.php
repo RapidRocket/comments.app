@@ -14,9 +14,9 @@ class CreateCommentsRatedTable extends Migration
     {
         Schema::create('comments_rated', function(Blueprint $table){
 
-            $table->integer('user_id');
-            $table->integer('post_id');
-            $table->integer('comment_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('post_id')->unsigned();
+            $table->integer('comment_id')->unsigned();
             $table->boolean('vote');
 
         });

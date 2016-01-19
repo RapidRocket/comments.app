@@ -16,4 +16,9 @@ class Post extends Model
         'deleted'
 
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

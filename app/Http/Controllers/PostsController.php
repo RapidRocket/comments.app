@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Comment;
-use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\PostRequest;
 use App\Post;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Request;
 
 use App\Http\Requests;
@@ -33,16 +35,32 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store(CreatePostRequest $request){
+    public function store(PostRequest $request){
 
-        $request['user_id'] = '1';
         $request['excerts'] = $request['body'];
         $request['published_at'] = Carbon::now();
-
-        Post::create($request->all());
+        $post = new Post($request->all());
+        Auth::user()->posts()->save($post);
 
         return redirect('posts');
     }
 
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(PostRequest $request, $id)
+    {
+
+        $post = Post::findOrFail($id);
+
+        $post->update($request->all());
+
+        return redirect('posts');
+
+    }
 
 }

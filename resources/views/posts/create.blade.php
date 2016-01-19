@@ -6,7 +6,7 @@
     <hr>
 
     <!-- Posts Form Create -->
-    {!! Form::open(array('url' => 'posts/')) !!}
+    {!! Form::open(['method' => 'POST', 'action' => ['PostsController@store']]) !!}
 
     @include('posts.partials.form', ['submitButtonText' => 'Add Post'])
 

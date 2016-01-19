@@ -22,6 +22,10 @@ Route::post('comments', 'CommentsController@store');*/
 Route::resource('posts', 'PostsController');
 Route::resource('comments', 'CommentsController');
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
 
 
 /*
@@ -37,4 +41,10 @@ Route::resource('comments', 'CommentsController');
 
 Route::group(['middleware' => ['web']], function () {
     //
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
