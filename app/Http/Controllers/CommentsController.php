@@ -6,6 +6,7 @@ use App\Comment;
 use App\Http\Requests\CommentRequest;
 use Carbon\Carbon;
 use Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -19,10 +20,9 @@ class CommentsController extends Controller
     public function store(CommentRequest $request)
     {
 
-        $request['user_id'] = '1';
         $request['published_at'] = Carbon::now();
-
-        Comment::create($request->all());
+        $comment = new Comment($request->all());
+        Auth::user()->comments()->save($comment);
 
         return redirect ('posts/'.$request['post_id']);
     }

@@ -26,6 +26,10 @@ class CreateCommentsTable extends Migration
             $table->timestamp('deleted_at')->nullable();
             $table->boolean('deleted')->nullable();
 
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
+
         });
     }
 

@@ -1,0 +1,4 @@
+INSERT INTO posts (id, user_id, title, excerts, body, created_at, updated_at, published_at, deleted) VALUES (1, 2, 'Jackson First Post', 'Lorem ipsum Text', 'Lorem ipsum Long Text', '1453064400000', '1453064400000', '1453064400000', null);
+INSERT INTO posts (id, user_id, title, excerts, body, created_at, updated_at, published_at, deleted) VALUES (2, 2, 'Jackson Second Post', 'Lorem ipsum Text', 'Lorem ipsum Long Text', '1453064400000', '1453064400000', '1453064400000', null);
+INSERT INTO posts (id, user_id, title, excerts, body, created_at, updated_at, published_at, deleted) VALUES (3, 3, 'Andrew First Post', 'Lorem ipsum Text', 'Lorem ipsum Long Text', '1453064400000', '1453064400000', '1453064400000', null);
+INSERT INTO posts (id, user_id, title, excerts, body, created_at, updated_at, published_at, deleted) VALUES (4, 3, 'Andrew Second Post', 'Lorem ipsum Text', 'Lorem ipsum Long Text', '1453064400000', '1453064400000', '1453064400000', null);
