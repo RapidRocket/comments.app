@@ -1,39 +1,64 @@
-<div class="row">
-    <div class="col-sm-12">
-        <h3>User Comment Example</h3>
-    </div><!-- /col-sm-12 -->
-</div><!-- /row -->
-<div class="row">
-    <div class="col-sm-1">
-        <div class="thumbnail">
-            <img class="img-responsive user-photo"
-                 src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-        </div><!-- /thumbnail -->
-    </div><!-- /col-sm-1 -->
+<ul class="comment-list fade-transition" style="opacity: 1;">
+    <li class="comment fade-transition" id="comment-1137">
+        <div class="comment-content clearfix">
+            <div class="indicator"></div>
 
-    <div class="col-sm-5">
-        <div class="panel panel-default">
-            <div class="rate-pannel">
-                <button type="button"
-                        id="testBtn"
-                        class="btn btn-success glyphicon glyphicon-thumbs-up"
-                        data-loading-text=" ... ">
-                    {{ $comment->vote_up }}
-                </button>
-                {{--<span class="text-info">{{ $comment->vote_up-$comment->vote_dwn }}</span>--}}
-                <button type="button" id="testBtnDown"
-                        class="btn btn-danger glyphicon glyphicon-thumbs-down"
-                        data-loading-text=" ... ">
-                    {{ $comment->vote_dwn}}
-                </button>
+            <div class="avatar">
+                <a href="">
+                    <img alt="asdasd"
+                         src="http://www.gravatar.com/avatar/b6a5c5aa6991f593334402ce67f6a3d0/?d=wavatar&amp;s=200&amp;r=g">
+                </a>
             </div>
-            <div class="panel-heading">
-                <strong>{{ $comment->user_id }}</strong> <span
-                        class="text-muted">commented {{ $comment->created_at->diffForHumans() }}</span>
+
+            <div class="comment-body">
+                <header>
+                    <span class="author">asdasd</span>
+
+
+                    <a href="#!comment=1137" class="time-ago">
+                        <time datetime="2016-01-19T14:30:27+0000" title="2016-01-19T14:30:27+0000">12 hours ago</time>
+                    </a>
+
+                    <!-- Dropdown -->
+                    <div class="pull-right dropdown">
+                        <span class="collapse" title="Collapse">−</span>
+                        <span class="expand" title="Expand">+</span>
+
+
+                    </div>
+                </header>
+
+                <div class="comment-body-inner">
+
+                    <div class="comment-message"><img class="emoji" draggable="false" alt="😄"
+                                                      src="http://twemoji.maxcdn.com/36x36/1f604.png">;(
+                    </div>
+                </div>
+
+                <!-- Votes -->
+                <footer>
+                    <div class="comment-voting">
+                        <span class="upvotes"></span>
+                        <a href="#" title="Upvote" class="upvote">
+                            <span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <span class="sep"></span>
+                        <span class="downvotes"></span>
+                        <a href="#" title="Downvote" class="downvote">
+                            <span class="glyphicon glyphicon-chevron-down"></span></a>
+                    </div>
+
+                    <a href="#" class="reply">Reply</a>
+                </footer>
+
+                <!-- Edit form -->
+
             </div>
-            <div class="panel-body">
-                {{ $comment->body }}
-            </div><!-- /panel-body -->
-        </div><!-- /panel panel-default -->
-    </div><!-- /col-sm-5 -->
-    </div>
+
+
+        </div>
+
+        <ul class="comment-list children">
+
+        </ul>
+    </li>
+</ul>

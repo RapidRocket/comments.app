@@ -6,6 +6,7 @@
     <p>{{ $post->body  }}</p>
 
 @stop
+
 @section('comments')
     @include('comments.show')
 @stop

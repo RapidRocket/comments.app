@@ -1,32 +1,43 @@
 <h1> Comments: </h1>
-@if(count($comments))
-    <hr>
 
-    @foreach($comments as $comment)
+<hr>
 
-        @include('comments.partials.comment')
+<a href="comments" id="get">Get</a>
+<ul id="comments">
 
-    @endforeach
-    <hr>
+</ul>
 
-    <!-- Add Comment Form Create -->
-    {!! Form::open(array('url' => 'comments/')) !!}
+<script>
+    $(document).ready(function () {
 
-    @include('comments.partials.form', ['submitCommentText'=>'Add Comment'])
+        $('#get').click(function (e) {
+            e.preventDefault();
+            $.get('/comments/{{$post->id}}', function (data) {
 
-    {!! Form::close() !!}
+                console.log(data); // Output
+                //console.log($.parseJSON('{"name":"John"}'));
+                //console.log(build_tree(data, '1', null));
+                //populateSavedCounties($('#comments'), data);
 
-    @include('errors.list')
+                /*function populateSavedCounties(select, tree) {
 
-@else
-    <hr>
-    <!-- Add Comment Form Create -->
-    {!! Form::open(array('url' => 'comments/')) !!}
+                    var items = [];
 
-    @include('comments.partials.form', ['submitCommentText'=>'Add Comment'])
+                    $.each(data, function (id, option) {
 
-    {!! Form::close() !!}
+                        items.push('<li>' + option.id + ' ' + option.parent_id+ '</li>');
+                        //items.push(option.id);
 
-    @include('errors.list')
+                    });
+                    select.html(items.join(''));
 
-@endif
+                }*/
+
+            });
+        });
+
+    });
+
+
+</script>
+

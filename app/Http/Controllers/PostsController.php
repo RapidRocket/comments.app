@@ -32,12 +32,20 @@ class PostsController extends Controller
     public function show($id){
 
         $post = Post::findorFail($id);
+        /*$comments = Comment::where('post_id', '=', $id)->orderBy('created_at', 'desc')->get();
+        $count = new Comment();
+        foreach($comments as $comment)
+        {
+            $count['children'.$comment->id] = $comment->children;
+            $count['parent'.$comment->id] = $comment->parent;
 
-        $comments = Comment::where('post_id', '=', $id)->get();
+        }*/
+        //$count = Post::findorFail($id)->comments;
+        //$count = Comment::findorFail($id)->parent;
 
-        return view('posts.show', compact('post','comments'));
+        return view('posts.show', compact('post'));
     }
-
+    
     public function create(){
 
         return view('posts.create');

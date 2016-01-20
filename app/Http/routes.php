@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PostsController@index');
+
 /*
 Route::get('posts', 'PostsController@index');
 Route::get('posts/create', 'PostsController@create');
@@ -29,6 +30,7 @@ Route::controllers([
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
 
 /*
 |--------------------------------------------------------------------------
