@@ -1,8 +1,10 @@
-<h1> Comments: </h1>
 
-<hr>
 
-<a href="comments" id="get">Get</a>
+<a href="comments" id="get">
+    <h1> Comments: </h1>
+
+    <hr>
+</a>
 <ul id="comments">
 
 </ul>
@@ -14,24 +16,28 @@
             e.preventDefault();
             $.get('/comments/{{$post->id}}', function (data) {
 
-                console.log(data); // Output
+
+
+                var items = [];
+                //console.log(data);
+                //items.push(data); // Output
                 //console.log($.parseJSON('{"name":"John"}'));
                 //console.log(build_tree(data, '1', null));
-                //populateSavedCounties($('#comments'), data);
+                populateSavedCounties($('#comments'), data);
 
-                /*function populateSavedCounties(select, tree) {
+                function populateSavedCounties(select, data) {
 
-                    var items = [];
 
-                    $.each(data, function (id, option) {
+                    items.push(data);
+                    /*$.each(data, function (id, option) {
 
                         items.push('<li>' + option.id + ' ' + option.parent_id+ '</li>');
                         //items.push(option.id);
 
-                    });
+                    });*/
                     select.html(items.join(''));
 
-                }*/
+                }
 
             });
         });
