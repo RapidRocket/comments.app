@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea226901-88b9-4684-a2d6-8f1899891e17" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/comments/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/comments/show.blade.php" />
     </list>
     <ignored path="comments.app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -762,7 +760,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453320228432</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Tree">
+      <created>1453375665766</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1453375665766</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,7 +838,8 @@
     <MESSAGE value="Sessions, Modal Windows, Minor Changes" />
     <MESSAGE value="Bootstrap" />
     <MESSAGE value="Checkpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint" />
+    <MESSAGE value="Tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tree" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
