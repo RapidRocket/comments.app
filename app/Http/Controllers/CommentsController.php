@@ -22,7 +22,7 @@ class CommentsController extends Controller
     public function show($post_id)
     {
         if (Request::ajax()) {
-            $comments = Comment::where('post_id', '=', $post_id)->where('parent_id', '=', null)->get();
+            //$comments = Comment::where('post_id', '=', $post_id)->where('parent_id', '=', null)->get();
             //$count = Comment::findorFail(0)->childrens;
 
             //return $comments;

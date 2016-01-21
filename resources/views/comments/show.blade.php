@@ -46,4 +46,13 @@
 
 
 </script>
+<hr>
+<!-- Add Comment Form Create -->
+{!! Form::open(array('url' => 'comments/')) !!}
+
+@include('comments.partials.form', ['submitCommentText'=>'Add Comment'])
+
+{!! Form::close() !!}
+
+@include('errors.list')
 

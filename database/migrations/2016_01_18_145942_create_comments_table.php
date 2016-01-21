@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('post_id');
-            $table->integer('parent_id')->nullable();
+            $table->integer('parent_id')->nullable()->default(null);
             $table->string('body');
             $table->integer('vote_up')->default(0);
             $table->integer('vote_dwn')->default(0);
